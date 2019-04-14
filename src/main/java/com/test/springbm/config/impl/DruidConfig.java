@@ -43,7 +43,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -61,9 +60,11 @@ import javax.sql.DataSource;
 @MapperScan(basePackages = DruidConfig.PACKAGE, sqlSessionFactoryRef = "sessionFactory")
 public class DruidConfig implements DatabaseConfig {
 
-
+    //你的Mapper.java所在的报的位置，扫描这个包下的类
     public static final String PACKAGE = "com.test.springbm.mapper";
-
+    /**
+     * 	你的Mapper.xml的位置，classpath是相对路径，*Mapper.xml表示所有以Mapper结尾的xml
+     */
     public static final String MAPPER = "classpath:/mapper/*Mapper.xml";
 
     @Value("${spring.datasource.url}")

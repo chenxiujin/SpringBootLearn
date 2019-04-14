@@ -23,6 +23,21 @@ public class UserController {
         this.userService = userService;
     }
 
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    public int insert(User user){
+        return this.userService.insert(user);
+    }
+
+    @RequestMapping(value = "/delete")
+    public boolean delete(Integer id){
+        return this.userService.delete(id);
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public int update(User user){
+        return this.userService.update(user);
+    }
+
     @RequestMapping(value = "/select")
     public User selectByUserId(Integer id){
         return this.userService.selectUserById(id);

@@ -1,8 +1,13 @@
 # Mybatis配置
 mybatis:
   mapper-locations: classpath:mapper/*Mapper.xml
-  # logging.level.yourdaoclasspackagename=debug
   # mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
   # 两种方式的效果是一样的，但是上面一种可以指定某个包下的SQL打印出来，下面这个会全部的都会打印出来
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com:
+      test:
+        springbm:
+          mapper: debug
