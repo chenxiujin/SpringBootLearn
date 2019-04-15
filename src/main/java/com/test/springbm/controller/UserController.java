@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * @author CXP
  * @version 1.0
@@ -41,5 +43,10 @@ public class UserController {
     @RequestMapping(value = "/select")
     public User selectByUserId(Integer id){
         return this.userService.selectUserById(id);
+    }
+
+    @RequestMapping(value = "/selects")
+    public List<User> selectALl(){
+        return this.userService.selectAll();
     }
 }

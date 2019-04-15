@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  *
  * @author CXP
@@ -57,6 +59,10 @@ public class UserService {
      */
     public User selectUserById(Integer id) {
         return this.userMapper.selectByPrimaryKey(id);
+    }
+
+    public List<User> selectAll(){
+        return this.userMapper.selectAll();
     }
 
 }
