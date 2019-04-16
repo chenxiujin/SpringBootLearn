@@ -29,7 +29,7 @@ public interface UserMapper {
     int insert(User record);
 
     /**
-     * 对增加的数据去空格
+     * 选择性插入
      * @param record user
      * @return 增加记录的条数
      */
@@ -49,7 +49,7 @@ public interface UserMapper {
     List<User> selectAll();
 
     /**
-     * 修改记录
+     * 选择性修改记录
      * @param record user
      * @return 修改记录的条数
      */

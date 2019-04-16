@@ -27,7 +27,7 @@ public class UserService {
 
     /**
      * 增加一条记录
-     * @param user
+     * @param user entity
      * @return 增加记录的条数
      */
     public int insert(User user){
@@ -36,7 +36,7 @@ public class UserService {
 
     /**
      * 根据id删除一条记录
-     * @param id
+     * @param id user's id
      * @return 删除成功：true；删除失败：false
      */
     public boolean delete(Integer id){
@@ -45,7 +45,7 @@ public class UserService {
 
     /**
      * 修改记录
-     * @param user
+     * @param user entity
      * @return 修改记录的条数
      */
     public int update(User user){
@@ -54,13 +54,17 @@ public class UserService {
 
     /**
      * 根据id查询
-     * @param id
+     * @param id user's id
      * @return user
      */
     public User selectUserById(Integer id) {
         return this.userMapper.selectByPrimaryKey(id);
     }
 
+    /**
+     * 查询所有记录
+     * @return List entity
+     */
     public List<User> selectAll(){
         return this.userMapper.selectAll();
     }
